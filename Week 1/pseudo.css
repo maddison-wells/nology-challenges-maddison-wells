@@ -1,0 +1,24 @@
+div {
+  padding: 10px;
+}
+input {
+  border-radius: 10px;
+}
+button {
+  margin: 10px;
+  border-radius: 10px;
+}
+
+button:enabled,
+input:enabled {
+  background-color: lightskyblue;
+}
+
+input:disabled {
+  background-color: none;
+  color: grey;
+}
+
+input:required {
+  border: 3px solid red;
+}
