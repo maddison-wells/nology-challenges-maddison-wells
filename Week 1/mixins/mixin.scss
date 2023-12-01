@@ -1,0 +1,19 @@
+@use "mixins.scss";
+* {
+  margin: 10px;
+}
+
+.button {
+  @include mixins.text-weight-font-align(bold, Arial, center);
+  @include mixins.border-colour-style(2px, dotted, red);
+}
+
+.chip {
+  @include mixins.text-weight-font-align(bold, Arial, center);
+  @include mixins.border-colour-style(2px, solid, blue);
+}
+
+.pill {
+  @include mixins.text-weight-font-align(bold, Arial, center);
+  @include mixins.border-colour-style(2px, dashed, blue);
+}
