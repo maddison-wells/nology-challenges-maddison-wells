@@ -1,0 +1,28 @@
+.flex-container {
+  display: flex;
+  height: 900px;
+  margin: 20px;
+}
+
+div {
+  display: flex;
+  height: 300px;
+  width: 900px;
+  align-items: center;
+  justify-content: center;
+}
+
+#blue {
+  background-color: aqua;
+}
+
+#pink {
+  background-color: pink;
+}
+
+#orange {
+  background-color: orange;
+}
+#orange {
+  background-color: red;
+}

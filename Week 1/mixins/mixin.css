@@ -1,0 +1,24 @@
+* {
+  margin: 10px;
+}
+
+.button {
+  font-weight: bold;
+  font-family: Arial;
+  text-align: center;
+  border: 2px red dotted;
+}
+
+.chip {
+  font-weight: bold;
+  font-family: Arial;
+  text-align: center;
+  border: 2px blue solid;
+}
+
+.pill {
+  font-weight: bold;
+  font-family: Arial;
+  text-align: center;
+  border: 2px blue dashed;
+}
