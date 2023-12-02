@@ -1,0 +1,212 @@
+@import "partials/mixin.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:wght@200;500&display=swap");
+
+$main-font: "Poppins", sans-serif;
+$about-font: "Cedarville Cursive", cursive;
+$heading-colour: #a1cbe9;
+$subheading-colour: #94c5cc;
+
+* {
+  background-color: #efe6e6;
+}
+
+.about {
+  display: flex;
+  margin: 10px;
+  font-family: $main-font;
+  font-weight: 200;
+  // @include section-divide;
+
+  &__img {
+    width: 600px;
+  }
+
+  &__title {
+    color: $heading-colour;
+    text-align: center;
+    font-size: 60px;
+    margin: 30px;
+  }
+
+  &__subsection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    &--title {
+      text-align: center;
+      font-family: $about-font;
+      color: $subheading-colour;
+      // font-size: 40px;
+    }
+
+    &--penimg {
+      width: 50px;
+      height: 50px;
+      transform: rotate(10deg);
+    }
+  }
+
+  &__text--style {
+    flex-direction: column;
+    padding: 35px;
+    text-align: justify;
+    font-family: $main-font;
+  }
+
+  &__blurb {
+    @include section-divide;
+  }
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+  @include section-divide;
+  font-family: $main-font;
+  font-weight: 200;
+
+  &__information {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__information img {
+    width: 50px;
+    margin-right: 10px;
+  }
+}
+
+.skills {
+  font-family: $main-font;
+  font-weight: 200;
+  margin: 50px;
+  @include section-divide;
+
+  &__title h1 {
+    @include section-heading;
+  }
+
+  &__card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+  }
+
+  &__card--item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  &__card--item i {
+    color: $heading-colour;
+    font-size: 100px;
+  }
+}
+
+.projects {
+  font-family: $main-font;
+  font-weight: 200;
+  margin: 50px;
+  @include section-divide;
+
+  &__title {
+    @include section-heading;
+  }
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+
+    &--items {
+      border: 2px solid $subheading-colour;
+      border-radius: 20px;
+      max-width: 250px;
+      height: 310px;
+      padding: 20px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+
+      i {
+        font-size: 100px;
+        color: $heading-colour;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        @include section-heading;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.hidden-text {
+  max-height: 100px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.expand-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $heading-colour;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.contact {
+  font-family: $main-font;
+  font-weight: 200;
+  margin: 45px;
+  @include section-divide;
+  &__title {
+    h1 {
+      @include section-heading;
+    }
+  }
+
+  &__card {
+    display: flex;
+    justify-content: space-around;
+
+    &--item {
+      display: flex;
+
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    i {
+      color: $heading-colour;
+      font-size: 100px;
+    }
+  }
+}
+
+.footer {
+  font-family: $main-font;
+  font-weight: 200;
+  display: flex;
+  justify-content: end;
+  margin: 20px;
+  text-align: end;
+}

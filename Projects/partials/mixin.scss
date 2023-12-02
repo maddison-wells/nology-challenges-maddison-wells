@@ -1,0 +1,11 @@
+@mixin section-divide {
+  padding-bottom: 20px;
+  border-bottom: 2px solid $subheading-colour;
+}
+
+@mixin section-heading {
+  color: $subheading-colour;
+  font-family: $main-font;
+  display: block;
+  font-size: 35px;
+}

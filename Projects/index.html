@@ -4,7 +4,200 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maddison Wells Portfolio</title>
-    <link rel="stylesheet" href="styles.scss" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/e25bb34f55.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
   </head>
-  <body></body>
+  <body>
+    <section class="about">
+      <img
+        src="Portfolio/images/altaboutpic.png"
+        alt="Photo of Maddison"
+        class="about__img"
+      />
+      <div class="about__text--style">
+        <h1 class="about__title">Junior Full-Stack Developer</h1>
+        <div class="about__subsection">
+          <h2 class="about__subsection--title">About me</h2>
+          <!-- <img
+            src="paintstroke.png"
+            alt="styling img"
+            class="about__subsection--stroke"
+          /> -->
+          <img
+            src="Portfolio/images/signature.png"
+            alt="pen icon"
+            class="about__subsection--penimg"
+          />
+        </div>
+        <p class="about__blurb">
+          Hello there! I'm Maddison, coming from a background in finance, the
+          idea of transitioning into a field full of learning, creativity, and
+          innovation was too good to pass up. As a junior software engineer,
+          I've thrived on challenging myself to learn new concepts and item. I
+          love to dabble in art when time permits, and I'm never far from a good
+          book. If you're seeking a driven software engineer with a dash of
+          creativity, let's connect and explore the exciting possibilities
+          ahead!
+        </p>
+      </div>
+    </section>
+    <section class="details">
+      <div class="details__information">
+        <img src="Portfolio/images/woman.png" alt="female icon" />She/Her
+      </div>
+      <div class="details__information">
+        <img src="Portfolio/images/telephone.png" alt="phone icon" />0400 453
+        981
+      </div>
+      <div class="details__information">
+        <img src="Portfolio/images/pin.png" alt="location icon" />Sydney,
+        Australia
+      </div>
+      <div class="details__information">
+        <img
+          src="Portfolio/images/graduation-hat.png"
+          alt="study icon"
+        />Macquarie University
+      </div>
+      <div class="details__information">
+        <img src="Portfolio/images/death-star.png" alt="study icon" />Star Wars
+        Enthuiast
+      </div>
+    </section>
+    <section class="skills">
+      <div class="skills__title">
+        <h1>Skills</h1>
+      </div>
+      <div class="skills__card">
+        <div class="skills__card--item">
+          <i class="fa-brands fa-html5"></i>
+          <div class="skills__card--item-text">HTML5</div>
+        </div>
+        <div class="skills__card--item">
+          <i class="fa-brands fa-css3-alt"></i>
+          <div class="skills__card--item-text">CSS3</div>
+        </div>
+        <div class="skills__card--item">
+          <i class="fa-brands fa-sass"></i>
+          <div class="skills__card--item-text">SCSS/Sass</div>
+        </div>
+        <div class="skills__card--item">
+          <i class="fa-brands fa-js"></i>
+          <div class="skills__card--item-text">JavaScript</div>
+        </div>
+        <div class="skills__card--item">
+          <i class="fa-brands fa-git"></i>
+          <div class="skills__card--item-text">git</div>
+        </div>
+        <div class="skills__card--item">
+          <i class="fa-brands fa-java"></i>
+          <div class="skills__card--item-text">Java</div>
+        </div>
+        <div class="skills__card--item">
+          <i class="fa-brands fa-react"></i>
+          <div class="skills__card--item-text">ReactJS</div>
+        </div>
+        <div class="skills__card--item">
+          <i class="fa-brands fa-aws"></i>
+          <div class="skills__card--item-text">AWS</div>
+        </div>
+        <div class="skills__card--item">
+          <i class="fa-solid fa-database"></i>
+          <div class="skills__card--item-text">SQL</div>
+        </div>
+        <div class="skills__card--item">
+          <i class="fa-solid fa-leaf"></i>
+          <div class="skills__card--item-text">SpringBoot</div>
+        </div>
+        <div class="skills__card--item">
+          <i class="fa-brands fa-google"></i>
+          <div class="skills__card--item-text">FireBase & FireStore</div>
+        </div>
+      </div>
+    </section>
+    <section class="projects">
+      <div class="projects__title">
+        <h1>Projects</h1>
+      </div>
+      <div class="projects__card">
+        <div class="projects__card--items">
+          <i class="fa-solid fa-code"></i>
+          <h1>Project 1</h1>
+          <p class="projects__card--items-text hidden-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+            quos neque sint saepe consequatur. Sed voluptatibus, ratione ipsa
+            vel cum reprehenderit mollitia quidem. Libero quidem quam, dolores
+            cumque deleniti itaque!
+          </p>
+          <button class="expand-button" onclick="toggleTextVisibility(this)">
+            More
+          </button>
+        </div>
+        <div class="projects__card--items">
+          <i class="fa-solid fa-code"></i>
+          <h1>Project 2</h1>
+          <p class="projects__card--items-text hidden-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+            quos neque sint saepe consequatur. Sed voluptatibus, ratione ipsa
+            vel cum reprehenderit mollitia quidem. Libero quidem quam, dolores
+            cumque deleniti itaque!
+          </p>
+          <button class="expand-button" onclick="toggleTextVisibility(this)">
+            More
+          </button>
+        </div>
+        <div class="projects__card--items">
+          <i class="fa-solid fa-code"></i>
+          <h1>Project 3</h1>
+          <p class="projects__card--items-text hidden-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+            quos neque sint saepe consequatur. Sed voluptatibus, ratione ipsa
+            vel cum reprehenderit mollitia quidem. Libero quidem quam, dolores
+            cumque deleniti itaque!
+          </p>
+          <button class="expand-button" onclick="toggleTextVisibility(this)">
+            More
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="contact">
+      <div class="contact__title">
+        <h1>Contact</h1>
+      </div>
+      <div class="contact__card">
+        <div class="contact__card--item">
+          <a href="https://github.com/maddison-wells">
+            <i class="fa-brands fa-github"></i>
+            <div class="contact__card--item-text">maddison-wells</div></a
+          >
+        </div>
+        <div class="contact__card--item">
+          <a href="">
+            <i class="fa-solid fa-envelope"></i>
+            <div class="contact__card--item-text">
+              maddison.wells90@gmail.com
+            </div></a
+          >
+        </div>
+
+        <div class="contact__card--item">
+          <a href="https://www.linkedin.com/in/maddison-wells-79895a102/">
+            <i class="fa-brands fa-linkedin"></i>
+            <div class="contact__card--item-text">Linkedin</div></a
+          >
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <p class="footer__content">
+        Built in HTML, Sass and JS by Maddison Wells. <br />
+        Icons by Font Awesome | Flaticon
+      </p>
+    </footer>
+  </body>
 </html>

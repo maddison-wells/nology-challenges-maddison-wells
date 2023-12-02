@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:wght@200;500&display=swap");
+* {
+  background-color: #efe6e6;
+}
+
+.about {
+  display: flex;
+  margin: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+}
+.about__img {
+  width: 600px;
+}
+.about__title {
+  color: #a1cbe9;
+  text-align: center;
+  font-size: 60px;
+  margin: 30px;
+}
+.about__subsection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+.about__subsection--title {
+  text-align: center;
+  font-family: "Cedarville Cursive", cursive;
+  color: #94c5cc;
+}
+.about__subsection--penimg {
+  width: 50px;
+  height: 50px;
+  transform: rotate(10deg);
+}
+.about__text--style {
+  flex-direction: column;
+  padding: 35px;
+  text-align: justify;
+  font-family: "Poppins", sans-serif;
+}
+.about__blurb {
+  padding-bottom: 20px;
+  border-bottom: 2px solid #94c5cc;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #94c5cc;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+}
+.details__information {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.details__information img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.skills {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  margin: 50px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #94c5cc;
+}
+.skills__title h1 {
+  color: #94c5cc;
+  font-family: "Poppins", sans-serif;
+  display: block;
+  font-size: 35px;
+}
+.skills__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+.skills__card--item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+.skills__card--item i {
+  color: #a1cbe9;
+  font-size: 100px;
+}
+
+.projects {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  margin: 50px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #94c5cc;
+}
+.projects__title {
+  color: #94c5cc;
+  font-family: "Poppins", sans-serif;
+  display: block;
+  font-size: 35px;
+}
+.projects__card {
+  display: flex;
+  justify-content: space-between;
+}
+.projects__card--items {
+  border: 2px solid #94c5cc;
+  border-radius: 20px;
+  max-width: 250px;
+  height: 310px;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.projects__card--items i {
+  font-size: 100px;
+  color: #a1cbe9;
+  margin-bottom: 20px;
+}
+.projects__card--items h1 {
+  color: #94c5cc;
+  font-family: "Poppins", sans-serif;
+  display: block;
+  font-size: 35px;
+  font-size: 24px;
+}
+
+.hidden-text {
+  max-height: 100px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.expand-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #a1cbe9;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.contact {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  margin: 45px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #94c5cc;
+}
+.contact__title h1 {
+  color: #94c5cc;
+  font-family: "Poppins", sans-serif;
+  display: block;
+  font-size: 35px;
+}
+.contact__card {
+  display: flex;
+  justify-content: space-around;
+}
+.contact__card--item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+.contact__card a {
+  text-decoration: none;
+  color: black;
+}
+.contact__card i {
+  color: #a1cbe9;
+  font-size: 100px;
+}
+
+.footer {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  display: flex;
+  justify-content: end;
+  margin: 20px;
+  text-align: end;
+}
