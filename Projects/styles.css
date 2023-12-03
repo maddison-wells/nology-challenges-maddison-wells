@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:wght@200;500&display=swap");
-* {
-  background-color: #efe6e6;
-}
-
 .about {
   display: flex;
   margin: 10px;
@@ -10,13 +6,14 @@
   font-weight: 200;
 }
 .about__img {
-  width: 600px;
+  width: 50%;
 }
 .about__title {
   color: #a1cbe9;
   text-align: center;
   font-size: 60px;
   margin: 30px;
+  font-weight: 200;
 }
 .about__subsection {
   display: flex;
@@ -39,10 +36,104 @@
   padding: 35px;
   text-align: justify;
   font-family: "Poppins", sans-serif;
+  line-height: 1.5;
 }
 .about__blurb {
   padding-bottom: 20px;
   border-bottom: 2px solid #94c5cc;
+}
+
+.contact {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  margin: 45px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #94c5cc;
+}
+.contact__title h1 {
+  color: #94c5cc;
+  font-family: "Poppins", sans-serif;
+  display: block;
+  font-size: 35px;
+}
+.contact__card {
+  display: flex;
+  justify-content: space-around;
+}
+.contact__card--item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+.contact__card a {
+  text-decoration: none;
+  color: black;
+}
+.contact__card i {
+  color: #a1cbe9;
+  font-size: 100px;
+}
+
+.projects {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  margin: 50px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #94c5cc;
+}
+.projects__title {
+  color: #94c5cc;
+  font-family: "Poppins", sans-serif;
+  display: block;
+  font-size: 35px;
+}
+.projects__card {
+  display: flex;
+  justify-content: space-between;
+}
+.projects__card--items {
+  border: 2px solid #94c5cc;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px #698c92;
+  max-width: 250px;
+  height: 310px;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.projects__card--items i {
+  font-size: 100px;
+  color: #a1cbe9;
+  margin-bottom: 20px;
+}
+.projects__card--items h1 {
+  color: #94c5cc;
+  font-family: "Poppins", sans-serif;
+  display: block;
+  font-size: 35px;
+  font-size: 24px;
+}
+
+.hidden-text {
+  max-height: 100px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.expand-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #a1cbe9;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .details {
@@ -94,96 +185,8 @@
   font-size: 100px;
 }
 
-.projects {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  margin: 50px;
-  padding-bottom: 20px;
-  border-bottom: 2px solid #94c5cc;
-}
-.projects__title {
-  color: #94c5cc;
-  font-family: "Poppins", sans-serif;
-  display: block;
-  font-size: 35px;
-}
-.projects__card {
-  display: flex;
-  justify-content: space-between;
-}
-.projects__card--items {
-  border: 2px solid #94c5cc;
-  border-radius: 20px;
-  max-width: 250px;
-  height: 310px;
-  padding: 20px;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-}
-.projects__card--items i {
-  font-size: 100px;
-  color: #a1cbe9;
-  margin-bottom: 20px;
-}
-.projects__card--items h1 {
-  color: #94c5cc;
-  font-family: "Poppins", sans-serif;
-  display: block;
-  font-size: 35px;
-  font-size: 24px;
-}
-
-.hidden-text {
-  max-height: 100px;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-}
-
-.expand-button {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #a1cbe9;
-  color: #fff;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.contact {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  margin: 45px;
-  padding-bottom: 20px;
-  border-bottom: 2px solid #94c5cc;
-}
-.contact__title h1 {
-  color: #94c5cc;
-  font-family: "Poppins", sans-serif;
-  display: block;
-  font-size: 35px;
-}
-.contact__card {
-  display: flex;
-  justify-content: space-around;
-}
-.contact__card--item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-}
-.contact__card a {
-  text-decoration: none;
-  color: black;
-}
-.contact__card i {
-  color: #a1cbe9;
-  font-size: 100px;
+* {
+  background-color: #efe6e6;
 }
 
 .footer {
