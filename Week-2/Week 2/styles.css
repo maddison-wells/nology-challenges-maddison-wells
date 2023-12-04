@@ -1,0 +1,53 @@
+.flag {
+  display: flex;
+}
+
+.flag__flagTop,
+.flag__flagMiddle,
+.flag__flagBottom {
+  width: 150px;
+  height: 450px;
+}
+
+@media all and (min-width: 900px) {
+  .flag__flagTop {
+    background-color: green;
+  }
+  .flag__flagMiddle {
+    background-color: white;
+  }
+  .flag__flagBottom {
+    background-color: orange;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 899px) {
+  .flag__flagTop {
+    background-color: black;
+  }
+  .flag__flagMiddle {
+    background-color: yellow;
+  }
+  .flag__flagBottom {
+    background-color: red;
+  }
+}
+@media all and (max-width: 600px) {
+  .flag {
+    flex-direction: column;
+  }
+  .flag__flagTop {
+    width: 450px;
+    height: 150px;
+    background-color: black;
+  }
+  .flag__flagMiddle {
+    width: 450px;
+    height: 150px;
+    background-color: red;
+  }
+  .flag__flagBottom {
+    width: 450px;
+    height: 150px;
+    background-color: yellow;
+  }
+}

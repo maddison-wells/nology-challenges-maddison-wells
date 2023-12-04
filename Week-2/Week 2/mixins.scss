@@ -1,0 +1,4 @@
+@mixin flag-stripe($stripeWidth, $stripeHeight) {
+  width: $stripeWidth;
+  height: $stripeHeight;
+}
