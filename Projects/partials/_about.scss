@@ -6,7 +6,7 @@ $heading-colour: #a1cbe9;
 $subheading-colour: #94c5cc;
 
 @mixin section-divide {
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   border-bottom: 2px solid $subheading-colour;
 }
 
@@ -43,12 +43,13 @@ $subheading-colour: #94c5cc;
       text-align: center;
       font-family: $about-font;
       color: $subheading-colour;
-      // font-size: 40px;
+      font-size: 40px;
     }
 
     &--penimg {
       width: 50px;
       height: 50px;
+      margin-top: 25px;
       transform: rotate(10deg);
     }
   }

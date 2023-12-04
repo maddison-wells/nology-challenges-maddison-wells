@@ -6,7 +6,7 @@ $heading-colour: #a1cbe9;
 $subheading-colour: #94c5cc;
 
 @mixin section-divide {
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   border-bottom: 2px solid $subheading-colour;
 }
 
@@ -23,7 +23,7 @@ $subheading-colour: #94c5cc;
   margin: 50px;
   @include section-divide;
 
-  &__title {
+  &__title h1 {
     @include section-heading;
   }
 
@@ -53,24 +53,38 @@ $subheading-colour: #94c5cc;
         font-size: 24px;
       }
     }
-  }
-}
 
-.hidden-text {
-  max-height: 100px;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
+    &--items:hover {
+      box-shadow: 0px 0px 20px #7ba0a6;
+
+      i {
+        color: #59a8e1;
+      }
+
+      button {
+        background-color: #59a8e1;
+      }
+    }
+  }
 }
 
 .expand-button {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   background-color: $heading-colour;
   color: #fff;
-  padding: 5px 10px;
+  padding: 10px 10px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
+}
+
+.projects__card--items {
+  transition: height 0.3s ease;
+}
+
+.projects__card--items.expanded {
+  height: 450px;
 }

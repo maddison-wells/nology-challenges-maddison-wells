@@ -25,10 +25,12 @@
   text-align: center;
   font-family: "Cedarville Cursive", cursive;
   color: #94c5cc;
+  font-size: 40px;
 }
 .about__subsection--penimg {
   width: 50px;
   height: 50px;
+  margin-top: 25px;
   transform: rotate(10deg);
 }
 .about__text--style {
@@ -39,7 +41,7 @@
   line-height: 1.5;
 }
 .about__blurb {
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   border-bottom: 2px solid #94c5cc;
 }
 
@@ -47,7 +49,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   margin: 45px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   border-bottom: 2px solid #94c5cc;
 }
 .contact__title h1 {
@@ -75,15 +77,18 @@
   color: #a1cbe9;
   font-size: 100px;
 }
+.contact__card i:hover {
+  color: #59a8e1;
+}
 
 .projects {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   margin: 50px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   border-bottom: 2px solid #94c5cc;
 }
-.projects__title {
+.projects__title h1 {
   color: #94c5cc;
   font-family: "Poppins", sans-serif;
   display: block;
@@ -116,31 +121,42 @@
   font-size: 35px;
   font-size: 24px;
 }
-
-.hidden-text {
-  max-height: 100px;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
+.projects__card--items:hover {
+  box-shadow: 0px 0px 20px #7ba0a6;
+}
+.projects__card--items:hover i {
+  color: #59a8e1;
+}
+.projects__card--items:hover button {
+  background-color: #59a8e1;
 }
 
 .expand-button {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #a1cbe9;
   color: #fff;
-  padding: 5px 10px;
+  padding: 10px 10px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
+}
+
+.projects__card--items {
+  transition: height 0.3s ease;
+}
+
+.projects__card--items.expanded {
+  height: 450px;
 }
 
 .details {
   display: flex;
   justify-content: space-between;
   margin: 50px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   border-bottom: 2px solid #94c5cc;
   font-family: "Poppins", sans-serif;
   font-weight: 200;
@@ -159,7 +175,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   margin: 50px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   border-bottom: 2px solid #94c5cc;
 }
 .skills__title h1 {
@@ -183,6 +199,9 @@
 .skills__card--item i {
   color: #a1cbe9;
   font-size: 100px;
+}
+.skills__card--item i:hover {
+  color: #59a8e1;
 }
 
 * {

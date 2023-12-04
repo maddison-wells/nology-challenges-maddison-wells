@@ -6,7 +6,7 @@ $heading-colour: #a1cbe9;
 $subheading-colour: #94c5cc;
 
 @mixin section-divide {
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   border-bottom: 2px solid $subheading-colour;
 }
 
@@ -31,17 +31,21 @@ $subheading-colour: #94c5cc;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 30px;
-  }
 
-  &__card--item {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-  }
+    &--item {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
 
-  &__card--item i {
-    color: $heading-colour;
-    font-size: 100px;
+      i {
+        color: $heading-colour;
+        font-size: 100px;
+      }
+
+      i:hover {
+        color: #59a8e1;
+      }
+    }
   }
 }
