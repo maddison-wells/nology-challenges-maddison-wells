@@ -113,7 +113,7 @@ export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
  */
 export const getGrade = (score) => {
   if (isNaN(score) || score < 0 || score > 100) {
-    return "Score Unavailable";
+    return "Score unavailable";
   }
 
   let letterGrade;
@@ -140,6 +140,8 @@ export const getGrade = (score) => {
 
   return letterGrade;
 };
+
+console.log();
 
 /**
  * A function that find the area of a circle to 2 decimal places.
@@ -174,11 +176,7 @@ export const calculateAreaOfCircle = (radius) => {
  */
 export const getStudentSummary = (score, name) => {
   if (isNaN(score) || score < 0 || score > 100) {
-    return (
-      "My apologies " +
-      name +
-      ", there's been an error in processing your grade.'"
-    );
+    return `My apologies ${name}, there's been an error in processing your grade.`;
   }
 
   let summary;
@@ -188,10 +186,10 @@ export const getStudentSummary = (score, name) => {
       summary = "Congratulations " + name + "! You achieved a grade of A.";
       break;
     case score >= 70:
-      summary = "Well done  " + name + "! You achieved a grade of B.";
+      summary = "Well done " + name + "! You achieved a grade of B.";
       break;
     case score >= 60:
-      summary = "Nicely done  " + name + "! You achieved a grade of C.";
+      summary = "Nicely done " + name + "! You achieved a grade of C.";
       break;
     case score >= 50:
       summary = "That's okay " + name + ". You achieved a grade of D.";
