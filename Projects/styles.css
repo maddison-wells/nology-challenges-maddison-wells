@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:wght@200;500&display=swap");
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .about__img {
+    display: none;
+  }
+}
 .about {
   display: flex;
   margin: 10px;
@@ -81,6 +86,13 @@
   color: #59a8e1;
 }
 
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .projects__card {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
 .projects {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
@@ -152,8 +164,17 @@
   height: 450px;
 }
 
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .details {
+    flex-direction: column;
+    align-items: start;
+    text-align: center;
+    gap: 10px;
+  }
+}
 .details {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin: 50px;
   padding-bottom: 40px;
@@ -206,8 +227,14 @@
 
 * {
   background-color: #efe6e6;
+  box-sizing: border-box;
 }
 
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .footer {
+    display: none;
+  }
+}
 .footer {
   font-family: "Poppins", sans-serif;
   font-weight: 200;

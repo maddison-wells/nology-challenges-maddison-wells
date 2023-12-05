@@ -4,6 +4,7 @@
 @use "./partials/projects";
 @use "./partials/details";
 @use "./partials/skills";
+@use "./partials/_mediaQueries";
 
 @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:wght@200;500&display=swap");
 
@@ -26,6 +27,13 @@ $subheading-colour: #94c5cc;
 
 * {
   background-color: #efe6e6;
+  box-sizing: border-box;
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .footer {
+    display: none;
+  }
 }
 
 .footer {
