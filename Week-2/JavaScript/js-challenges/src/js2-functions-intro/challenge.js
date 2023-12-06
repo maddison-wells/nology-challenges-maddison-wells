@@ -73,12 +73,9 @@ export const checkIfNewHighScore = (score, highScore) => {
  * @returns {string} "15 degrees celsius is 59 degrees fahrenheit"
  */
 export const celsiusToFahrenheit = (tempInCelsius) => {
-  return (
-    tempInCelsius +
-    " degrees celsius is " +
-    ((tempInCelsius * 9) / 5 + 32) +
-    " degrees fahrenheit"
-  );
+  return `${tempInCelsius} degrees celsius is ${
+    (tempInCelsius * 9) / 5 + 32
+  } degrees fahrenheit`;
 };
 
 /**
@@ -112,9 +109,12 @@ export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
  * @returns {string} A - F | Score unavailable
  */
 export const getGrade = (score) => {
-  if (isNaN(score) || score < 0 || score > 100) {
+  if (typeof score !== "number" || score < 0 || score > 100) {
     return "Score unavailable";
   }
+
+  // parseInt isNaN
+  // typeOf ==="number"
 
   let letterGrade;
 
@@ -175,7 +175,7 @@ export const calculateAreaOfCircle = (radius) => {
  * @param {string} name John
  */
 export const getStudentSummary = (score, name) => {
-  if (isNaN(score) || score < 0 || score > 100) {
+  if (typeof score !== "number" || score < 0 || score > 100) {
     return `My apologies ${name}, there's been an error in processing your grade.`;
   }
 
@@ -183,25 +183,22 @@ export const getStudentSummary = (score, name) => {
 
   switch (true) {
     case score >= 80:
-      summary = "Congratulations " + name + "! You achieved a grade of A.";
+      summary = `Congratulations ${name}! You achieved a grade of A.`;
       break;
     case score >= 70:
-      summary = "Well done " + name + "! You achieved a grade of B.";
+      summary = `Well done ${name}! You achieved a grade of B.`;
       break;
     case score >= 60:
-      summary = "Nicely done " + name + "! You achieved a grade of C.";
+      summary = `Nicely done ${name}! You achieved a grade of C.`;
       break;
     case score >= 50:
-      summary = "That's okay " + name + ". You achieved a grade of D.";
+      summary = `That's okay ${name}. You achieved a grade of D.`;
       break;
     case score >= 40:
-      summary = "Too bad " + name + ". You achieved a grade of E.";
+      summary = `Too bad ${name}. You achieved a grade of E.`;
       break;
     default:
-      summary =
-        "Sorry " +
-        name +
-        ". You achieved a grade of F. There's always next year.";
+      summary = `Sorry ${name}. You achieved a grade of F. There's always next year.`;
   }
 
   return summary;
