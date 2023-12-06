@@ -1,7 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:wght@200;500&display=swap");
 @media (min-width: 576px) and (max-width: 767.98px) {
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .about__img {
     display: none;
+  }
+  .about__imgsmall {
+    text-align: center;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about__imgsmall--small {
+    max-width: 250px;
+    max-height: 250px;
+    width: 100%;
+    height: auto;
+    margin: auto;
   }
 }
 .about {
@@ -92,83 +110,79 @@
     align-items: center;
     gap: 30px;
   }
+  .projects__card--items {
+    min-width: 500px;
+  }
+  .projects {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    margin: 50px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid #94c5cc;
+  }
+  .projects__title h1 {
+    color: #94c5cc;
+    font-family: "Poppins", sans-serif;
+    display: block;
+    font-size: 35px;
+  }
+  .projects__card {
+    display: flex;
+    justify-content: space-between;
+  }
+  .projects__card--items {
+    border: 2px solid #94c5cc;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px #698c92;
+    max-width: 250px;
+    height: 310px;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .projects__card--items i {
+    font-size: 100px;
+    color: #a1cbe9;
+    margin-bottom: 20px;
+  }
+  .projects__card--items h1 {
+    color: #94c5cc;
+    font-family: "Poppins", sans-serif;
+    display: block;
+    font-size: 35px;
+    font-size: 24px;
+  }
+  .projects__card--items:hover {
+    box-shadow: 0px 0px 20px #7ba0a6;
+  }
+  .projects__card--items:hover i {
+    color: #59a8e1;
+  }
+  .projects__card--items:hover button {
+    background-color: #59a8e1;
+  }
+  .expand-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #a1cbe9;
+    color: #fff;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .projects__card--items {
+    transition: height 0.3s ease;
+  }
+  .projects__card--items.expanded {
+    height: 450px;
+  }
 }
-.projects {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  margin: 50px;
-  padding-bottom: 40px;
-  border-bottom: 2px solid #94c5cc;
-}
-.projects__title h1 {
-  color: #94c5cc;
-  font-family: "Poppins", sans-serif;
-  display: block;
-  font-size: 35px;
-}
-.projects__card {
-  display: flex;
-  justify-content: space-between;
-}
-.projects__card--items {
-  border: 2px solid #94c5cc;
-  border-radius: 20px;
-  box-shadow: 5px 5px 20px #698c92;
-  max-width: 250px;
-  height: 310px;
-  padding: 20px;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-}
-.projects__card--items i {
-  font-size: 100px;
-  color: #a1cbe9;
-  margin-bottom: 20px;
-}
-.projects__card--items h1 {
-  color: #94c5cc;
-  font-family: "Poppins", sans-serif;
-  display: block;
-  font-size: 35px;
-  font-size: 24px;
-}
-.projects__card--items:hover {
-  box-shadow: 0px 0px 20px #7ba0a6;
-}
-.projects__card--items:hover i {
-  color: #59a8e1;
-}
-.projects__card--items:hover button {
-  background-color: #59a8e1;
-}
-
-.expand-button {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #a1cbe9;
-  color: #fff;
-  padding: 10px 10px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.projects__card--items {
-  transition: height 0.3s ease;
-}
-
-.projects__card--items.expanded {
-  height: 450px;
-}
-
 @media (min-width: 576px) and (max-width: 767.98px) {
   .details {
-    flex-direction: column;
-    align-items: start;
-    text-align: center;
     gap: 10px;
   }
 }

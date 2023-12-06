@@ -23,78 +23,82 @@ $subheading-colour: #94c5cc;
       flex-direction: column;
       align-items: center;
       gap: 30px;
-    }
-  }
-}
 
-.projects {
-  font-family: $main-font;
-  font-weight: 200;
-  margin: 50px;
-  @include section-divide;
-
-  &__title h1 {
-    @include section-heading;
-  }
-
-  &__card {
-    display: flex;
-    justify-content: space-between;
-
-    &--items {
-      border: 2px solid $subheading-colour;
-      border-radius: 20px;
-      box-shadow: 5px 5px 20px #698c92;
-      max-width: 250px;
-      height: 310px;
-      padding: 20px;
-      text-align: center;
-      overflow: hidden;
-      position: relative;
-
-      i {
-        font-size: 100px;
-        color: $heading-colour;
-        margin-bottom: 20px;
-      }
-
-      h1 {
-        @include section-heading;
-        font-size: 24px;
-      }
-    }
-
-    &--items:hover {
-      box-shadow: 0px 0px 20px #7ba0a6;
-
-      i {
-        color: #59a8e1;
-      }
-
-      button {
-        background-color: #59a8e1;
+      &--items {
+        min-width: 500px;
       }
     }
   }
-}
 
-.expand-button {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: $heading-colour;
-  color: #fff;
-  padding: 10px 10px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
+  .projects {
+    font-family: $main-font;
+    font-weight: 200;
+    margin: 50px;
+    @include section-divide;
 
-.projects__card--items {
-  transition: height 0.3s ease;
-}
+    &__title h1 {
+      @include section-heading;
+    }
 
-.projects__card--items.expanded {
-  height: 450px;
+    &__card {
+      display: flex;
+      justify-content: space-between;
+
+      &--items {
+        border: 2px solid $subheading-colour;
+        border-radius: 20px;
+        box-shadow: 5px 5px 20px #698c92;
+        max-width: 250px;
+        height: 310px;
+        padding: 20px;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+
+        i {
+          font-size: 100px;
+          color: $heading-colour;
+          margin-bottom: 20px;
+        }
+
+        h1 {
+          @include section-heading;
+          font-size: 24px;
+        }
+      }
+
+      &--items:hover {
+        box-shadow: 0px 0px 20px #7ba0a6;
+
+        i {
+          color: #59a8e1;
+        }
+
+        button {
+          background-color: #59a8e1;
+        }
+      }
+    }
+  }
+
+  .expand-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $heading-colour;
+    color: #fff;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .projects__card--items {
+    transition: height 0.3s ease;
+  }
+
+  .projects__card--items.expanded {
+    height: 450px;
+  }
 }
