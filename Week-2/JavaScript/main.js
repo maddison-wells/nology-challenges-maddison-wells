@@ -252,7 +252,230 @@ function gameScore(twoPointers, threePointers) {
 console.log(gameScore(5, 5));
 
 function sumLessThanOneHundred(num1, num2) {
-  return num1 + num2 >= 100 ? true : false;
+  return num1 + num2 >= 100 ? false : true;
 }
 
 console.log(sumLessThanOneHundred(90, 10));
+
+const a = 1;
+const b = 2;
+const c = 3;
+
+function firstFunction() {
+  const b = 5;
+  const c = 6;
+
+  console.log(`a: ${a}, b: ${b}, c: ${c}`);
+
+  function secondFunction() {
+    const b = 8;
+
+    console.log(`a: ${a}, b: ${b}, c: ${c}`);
+
+    function thirdFunction() {
+      const a = 7;
+      const c = 9;
+
+      console.log(`a: ${a}, b: ${b}, c: ${c}`);
+
+      function fourthFunction() {
+        const a = 1;
+        const c = 8;
+
+        console.log(`a: ${a}, b: ${b}, c: ${c}`);
+      }
+
+      fourthFunction();
+    }
+
+    thirdFunction();
+  }
+
+  secondFunction();
+}
+
+firstFunction();
+
+console.log(`a: ${a}, b: ${b}, c: ${c}`);
+
+// a:1, b:8, c:6 second scope
+// a:1, b:8, c:8 fourth scope
+// a:1, b:5, c:6 first scope
+// a:7, b:8, c:9 third scope
+
+// 1. Create an array with 3 of your hobbies
+
+let myHobbies = ["drawing", "reading", "travelling"];
+
+// 1. Print in the console the first hobby in the array
+
+console.log(myHobbies[0]);
+
+// 1. Remove that first hobby from the array and store that hobby in a variable
+
+let hobby = myHobbies.shift();
+
+console.log(hobby);
+
+// 1. Store the length of the array in a variable
+
+let hobbiesLength = myHobbies.length;
+
+console.log(hobbiesLength);
+
+// 1. Add another hobby at the end of the array
+
+myHobbies.push("cooking");
+
+console.log(myHobbies);
+
+// 1. Print that last hobby in the console
+
+console.log(myHobbies[myHobbies.length - 1]);
+
+// Bonus:
+
+// 1. Join all your hobbies in a single string each hobby being comma separated
+//    (i.e. "My hobbies are: hobby1, hobby2, hobby2")
+
+console.log(myHobbies.join(", "));
+
+// ## Challenge: Grocery Lists
+
+// ### MVP
+
+// 1. Create an array containing 5 grocery items you often buy
+// 2. Log this list to the console, make sure the output is pipe delimited
+
+let myShoppingList = ["avo", "chicken", "shampoo", "milk", "ice-cream"];
+
+console.log(myShoppingList.join("|"));
+
+// // ```js
+// // ['apple', 'pear', 'papaya', 'mango'] => 'apple|pear|papaya|mango'
+// // ```
+
+// ## Challenge: Sum of `n`
+
+// ### MVP:
+
+// Create a function with a for loop that will add all the numbers up to n
+
+function addItems(n) {
+  let sum = 0;
+  for (let i = 0; i <= n; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+console.log(addItems(10));
+
+// 1. You should create a variable to set the upper limit of your loop
+// 2. Your loop should increment by 1 on each iteration
+// 3. Your loop should print the final result
+
+// ```js
+// sum(10) => 55
+// ```
+
+// ### Bonus:
+
+// Try writing the function again with the same inputs and outputs **Without**
+// using a loop. (You may need to google some formulas!)
+
+function addItem(n) {
+  return (n * (n + 1)) / 2;
+}
+
+console.log(addItem(10));
+
+function totalScores(scoreArr) {
+  let finalScore = 0;
+  for (let i = 0; i < scoreArr.length; i++) {
+    finalScore += scoreArr[i];
+  }
+  return finalScore;
+}
+
+console.log(totalScores([10, 11, 12]));
+
+const totalRange = (rangeMax) => {
+  let sum = 0;
+  for (let i = 1; i <= rangeMax; i++) {
+    sum += i;
+  }
+  return sum;
+};
+
+console.log(totalRange(10));
+
+let itemsArr = [10, 11, 12];
+
+const moveFirstAndLastItems = (itemsArr) => {
+  itemsArr.unshift(itemsArr.pop());
+  return itemsArr;
+};
+
+console.log(moveFirstAndLastItems([10, 11, 12]));
+
+const generateAverage = (numberArr) => {
+  let average = 0;
+  let sum = 0;
+  for (let i = 0; i < numberArr.length; i++) {
+    sum += numberArr[i];
+  }
+  average = sum / numberArr.length;
+  return Math.round(average, 0);
+};
+
+console.log(generateAverage([]));
+
+const reverseOrder = (toReverseArr) => {
+  let reverseArr = toReverseArr.reverse();
+  return reverseArr;
+};
+
+console.log(reverseOrder([10, 11, 12]));
+
+let playersArr = ["Tony", "John", "Dave"];
+let scoresArr = [45, 55, 66];
+
+const generateHighscores = (playersArr, scoresArr) => {
+  if (playersArr.length === 0) {
+    return "Invaild";
+  }
+  let newArr = [];
+  for (let i = 0; i < playersArr.length; i++) {
+    newArr.push(`P:${i + 1} ${playersArr[i]} scored ${scoresArr[i]}`);
+  }
+  return newArr;
+};
+
+console.log(generateHighscores(["Tony", "John", "Dave"], [45, 55, 66]));
+
+const encryptString = (toEncrypt) => {
+  let newArr = [];
+  for (let i = 0; i < toEncrypt.length; i += 3) {
+    newArr.push(toEncrypt[i]);
+  }
+  for (let i = 1; i < toEncrypt.length; i += 3) {
+    newArr.push(toEncrypt[i]);
+  }
+  for (let i = 2; i < toEncrypt.length; i += 3) {
+    newArr.push(toEncrypt[i]);
+  }
+  return newArr.join("");
+};
+
+console.log(encryptString("encrypted"));
+
+const reverseOrderr = (toReverseArr) => {
+  let newArr = [];
+  for (let i = toReverseArr.length - 1; i >= 0; i--) {
+    newArr.push(toReverseArr[i]);
+  }
+  return newArr;
+};
+
+console.log(reverseOrderr(["william", 1, 2, 3]));
