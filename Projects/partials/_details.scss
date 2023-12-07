@@ -1,35 +1,19 @@
-// @use "partials/mixins.scss";
+@use "mixins";
 
 $main-font: "Poppins", sans-serif;
 $about-font: "Cedarville Cursive", cursive;
-$heading-colour: #a1cbe9;
-$subheading-colour: #94c5cc;
-
-@mixin section-divide {
-  padding-bottom: 40px;
-  border-bottom: 2px solid $subheading-colour;
-}
-
-@mixin section-heading {
-  color: $subheading-colour;
-  font-family: $main-font;
-  display: block;
-  font-size: 35px;
-}
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .details {
-    gap: 10px;
-  }
-}
+$main-colour: #a1cbe9;
+$secondary-colour: #94c5cc;
 
 .details {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin: 50px;
-  @include section-divide;
+  @include mixins.section-divide;
   font-family: $main-font;
   font-weight: 200;
+  gap: 20px;
 
   &__information {
     display: flex;

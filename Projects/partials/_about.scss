@@ -1,65 +1,27 @@
-// @use "partials/mixins.scss";
+@use "mixins";
 
 $main-font: "Poppins", sans-serif;
 $about-font: "Cedarville Cursive", cursive;
-$heading-colour: #a1cbe9;
-$subheading-colour: #94c5cc;
-
-@mixin section-divide {
-  padding-bottom: 40px;
-  border-bottom: 2px solid $subheading-colour;
-}
-
-@mixin section-heading {
-  color: $subheading-colour;
-  font-family: $main-font;
-  display: block;
-  font-size: 35px;
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .about {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &__img {
-      display: none;
-    }
-
-    &__imgsmall {
-      text-align: center;
-      display: block;
-      flex-direction: column;
-      align-items: center;
-
-      &--small {
-        max-width: 250px;
-        max-height: 250px;
-        width: 100%;
-        height: auto;
-        margin: auto;
-      }
-    }
-  }
-}
+$main-colour: #a1cbe9;
+$secondary-colour: #94c5cc;
 
 .about {
   display: flex;
   margin: 10px;
   font-family: $main-font;
   font-weight: 200;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  justify-content: center;
+  align-items: center;
 
   &__img {
-    width: calc(50%);
-
-    &--small {
-      // display: none;
-    }
+    width: 600px;
+    height: 600px;
   }
 
   &__title {
-    color: $heading-colour;
+    color: $main-colour;
     text-align: center;
     font-size: 60px;
     margin: 30px;
@@ -74,7 +36,7 @@ $subheading-colour: #94c5cc;
     &--title {
       text-align: center;
       font-family: $about-font;
-      color: $subheading-colour;
+      color: $secondary-colour;
       font-size: 40px;
     }
 
@@ -95,6 +57,6 @@ $subheading-colour: #94c5cc;
   }
 
   &__blurb {
-    @include section-divide;
+    @include mixins.section-divide;
   }
 }

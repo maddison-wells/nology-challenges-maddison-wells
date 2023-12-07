@@ -1,40 +1,28 @@
-// @use "partials/mixins.scss";
+@use "mixins.scss";
 
 $main-font: "Poppins", sans-serif;
 $about-font: "Cedarville Cursive", cursive;
-$heading-colour: #a1cbe9;
-$subheading-colour: #94c5cc;
-
-@mixin section-divide {
-  padding-bottom: 40px;
-  border-bottom: 2px solid $subheading-colour;
-}
-
-@mixin section-heading {
-  color: $subheading-colour;
-  font-family: $main-font;
-  display: block;
-  font-size: 35px;
-}
+$main-colour: #a1cbe9;
+$secondary-colour: #94c5cc;
 
 .contact {
   font-family: $main-font;
   font-weight: 200;
   margin: 45px;
-  @include section-divide;
+  @include mixins.section-divide;
   &__title {
     h1 {
-      @include section-heading;
+      @include mixins.section-heading;
     }
   }
 
   &__card {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 
     &--item {
       display: flex;
-
       flex-direction: column;
       align-items: center;
       text-align: center;
@@ -46,7 +34,7 @@ $subheading-colour: #94c5cc;
     }
 
     i {
-      color: $heading-colour;
+      color: $main-colour;
       font-size: 100px;
     }
 

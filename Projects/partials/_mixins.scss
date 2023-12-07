@@ -1,15 +1,15 @@
 $main-font: "Poppins", sans-serif;
 $about-font: "Cedarville Cursive", cursive;
-$heading-colour: #a1cbe9;
-$subheading-colour: #94c5cc;
+$main-colour: #a1cbe9;
+$secondary-colour: #94c5cc;
 
 @mixin section-divide {
   padding-bottom: 40px;
-  border-bottom: 2px solid $subheading-colour;
+  border-bottom: 2px solid $secondary-colour;
 }
 
 @mixin section-heading {
-  color: $subheading-colour;
+  color: $secondary-colour;
   font-family: $main-font;
   display: block;
   font-size: 35px;

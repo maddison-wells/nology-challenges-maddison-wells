@@ -1,0 +1,33 @@
+$main-font: "Poppins", sans-serif;
+$about-font: "Cedarville Cursive", cursive;
+$main-colour: #a1cbe9;
+$secondary-colour: #94c5cc;
+
+.nav {
+  display: flex;
+  justify-content: end;
+  margin-right: 30px;
+  &__list {
+    text-decoration: none;
+    font-family: $main-font;
+    list-style: none;
+  }
+
+  &__listitem a {
+    text-decoration: none;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    color: $main-colour;
+  }
+  100% {
+    color: $secondary-colour;
+  }
+}
+
+.animated-text {
+  font-size: 20px;
+  animation: colorChange 4s infinite;
+}
