@@ -479,3 +479,56 @@ const reverseOrderr = (toReverseArr) => {
 };
 
 console.log(reverseOrderr(["william", 1, 2, 3]));
+
+// Recap exercises (loops and methods)
+
+const pets = ["pixie", "claude", "sebastian", "bug"];
+// -> 1. ['claude', 'sebastian', 'bug', 'pixie']
+pets.push(pets.shift());
+console.log(pets);
+// -> 2. ['pixie', 'bug', 'sebastian', 'claude']
+pets.reverse();
+console.log(pets);
+// -> 3. ['bug', 'sebastian', 'pixie']
+pets.pop();
+pets.push(pets.shift());
+console.log(pets);
+// -> 4. ['Bug', 'Sebastian', 'Pixie]
+for (let i = 0; i < pets.length; i++) {
+  const capValue = pets[i][0].toUpperCase() + pets[i].slice(1);
+  pets[i] = capValue;
+}
+console.log(pets);
+// -> 5. ['Bug', 'Seb', 'Pix']
+for (let i = 0; i < pets.length; i++) {
+  pets[i] = pets[i].slice(0, 3);
+}
+console.log(pets);
+
+function randomNumbers(x) {
+  let numbers = [];
+
+  while (numbers.length <= x) {
+    let randomNumber = Math.floor(Math.random() * 15) + 1;
+    numbers.push(randomNumber);
+  }
+  return numbers;
+}
+
+console.log(randomNumbers(10));
+
+function generateNumbers(n, r, isUnique = true) {
+  let numbers = [];
+
+  while (numbers.length <= n) {
+    let randomNumber = Math.floor(Math.random() * r);
+    if (isUnique && !numbers.includes(randomNumber)) {
+      numbers.push(randomNumber);
+    } else if (isUnique === false) {
+      numbers.push(randomNumber);
+    }
+  }
+  return numbers;
+}
+
+console.log(generateNumbers(10, 15, false));
