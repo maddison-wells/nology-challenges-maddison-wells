@@ -1,0 +1,75 @@
+@use "mixins";
+
+$main-font: "Poppins", sans-serif;
+$about-font: "Cedarville Cursive", cursive;
+$main-colour: #a1cbe9;
+$secondary-colour: #94c5cc;
+
+.projects {
+  font-family: $main-font;
+  font-weight: 200;
+  margin: 50px;
+  @include mixins.section-divide;
+
+  &__title h1 {
+    @include mixins.section-heading;
+  }
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+
+    &--items {
+      border: 2px solid $secondary-colour;
+      border-radius: 20px;
+      box-shadow: 5px 5px 20px #698c92;
+      max-width: 250px;
+      height: 310px;
+      padding: 20px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      transition: height 0.3s ease;
+    }
+
+    &--items.expanded {
+      height: 550px;
+    }
+
+    i {
+      font-size: 100px;
+      color: $main-colour;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      @include mixins.section-heading;
+      font-size: 24px;
+    }
+  }
+
+  &--items:hover {
+    box-shadow: 0px 0px 20px #7ba0a6;
+
+    i {
+      color: #59a8e1;
+    }
+
+    button {
+      background-color: #59a8e1;
+    }
+  }
+}
+
+.expand-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $main-colour;
+  color: #fff;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}

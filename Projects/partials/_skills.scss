@@ -1,0 +1,40 @@
+@use "mixins";
+
+$main-font: "Poppins", sans-serif;
+$about-font: "Cedarville Cursive", cursive;
+$main-colour: #a1cbe9;
+$secondary-colour: #94c5cc;
+
+.skills {
+  font-family: $main-font;
+  font-weight: 200;
+  margin: 50px;
+  @include mixins.section-divide;
+
+  &__title h1 {
+    @include mixins.section-heading;
+  }
+
+  &__card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+
+    &--item {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+
+      i {
+        color: $main-colour;
+        font-size: 100px;
+      }
+
+      i:hover {
+        color: #59a8e1;
+      }
+    }
+  }
+}

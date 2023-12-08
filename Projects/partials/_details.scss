@@ -1,0 +1,28 @@
+@use "mixins";
+
+$main-font: "Poppins", sans-serif;
+$about-font: "Cedarville Cursive", cursive;
+$main-colour: #a1cbe9;
+$secondary-colour: #94c5cc;
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px;
+  @include mixins.section-divide;
+  font-family: $main-font;
+  font-weight: 200;
+  gap: 20px;
+
+  &__information {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__information img {
+    width: 50px;
+    margin-right: 10px;
+  }
+}

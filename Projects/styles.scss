@@ -1,0 +1,29 @@
+@use "./partials/mixins";
+@use "./partials/about";
+@use "./partials/contact";
+@use "./partials/projects";
+@use "./partials/details";
+@use "./partials/skills";
+@use "./partials/_mediaQueries";
+@use "./partials/nav";
+
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:wght@200;500&display=swap");
+
+$main-font: "Poppins", sans-serif;
+$about-font: "Cedarville Cursive", cursive;
+$heading-colour: #a1cbe9;
+$subheading-colour: #94c5cc;
+
+* {
+  background-color: #efe6e6;
+  box-sizing: border-box;
+}
+
+.footer {
+  font-family: $main-font;
+  font-weight: 200;
+  display: flex;
+  justify-content: end;
+  margin: 20px;
+  text-align: end;
+}
