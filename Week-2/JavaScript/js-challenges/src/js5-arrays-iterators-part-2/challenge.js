@@ -22,7 +22,11 @@
  */
 
 export const totalScoresArr = (scoresArr) => {
-  return;
+  let output = scoresArr.reduce((acc, i) => {
+    acc += i;
+    return acc;
+  }, 0);
+  return output;
 };
 
 /**
@@ -35,7 +39,7 @@ export const totalScoresArr = (scoresArr) => {
  */
 
 export const reverseString = (toReverse) => {
-  return;
+  return toReverse.split("").reduce((acc, char) => char + acc, "");
 };
 
 /**
@@ -48,7 +52,7 @@ export const reverseString = (toReverse) => {
  */
 
 export const sortCharactersAlphabetically = (charcterArr) => {
-  return;
+  return charcterArr.map((char) => char.toLowerCase()).sort();
 };
 
 /**
@@ -63,7 +67,9 @@ export const sortCharactersAlphabetically = (charcterArr) => {
  */
 
 export const sortNumbersHighToLow = (numberArr) => {
-  return;
+  return numberArr.sort((a, b) => {
+    return b - a;
+  });
 };
 
 /**
@@ -94,7 +100,9 @@ export const checkItemInstock = (toCheck) => {
     "blueberry",
     "melon",
   ];
-  return;
+  return stockList.includes(toCheck)
+    ? `${toCheck} is instock, it is on aisle ${stockList.indexOf(toCheck)}.`
+    : `Sorry ${toCheck} is not instock.`;
 };
 
 /**
@@ -106,11 +114,12 @@ export const checkItemInstock = (toCheck) => {
  * @param {string[]} coloursArr ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
  * @return {boolean} false
  */
+let isPrimary = ["red", "yellow", "blue"];
 
 export const checkPrimaryColours = (coloursArr) => {
-  return;
+  // const primaryColors = ["red", "blue", "yellow"];
+  return coloursArr.every((color) => ["red", "blue", "yellow"].includes(color));
 };
-
 /**
  * Advanced Challenges
  */
@@ -125,7 +134,14 @@ export const checkPrimaryColours = (coloursArr) => {
  */
 
 export const checkStringPalindrome = (stringOne) => {
-  return;
+  const isPal = stringOne.split("");
+  for (let i = 0; i < isPal.length / 2; i++) {
+    if (isPal[i] !== isPal[isPal.length - 1 - i]) {
+      return false;
+    }
+  }
+
+  return true;
 };
 
 /**
@@ -137,9 +153,12 @@ export const checkStringPalindrome = (stringOne) => {
  * @param {number[]} numberArr [[7, 7, 6], [2, 3, 2], [3]]
  * @return {number[]} [20, 7, 3]
  */
+// failing one
 
 export const totalNestedScoresArr = (scoresArr) => {
-  return;
+  return scoresArr.map((nestedArray) =>
+    nestedArray.reduce((acc, num) => (acc += num), 0)
+  );
 };
 
 /**
@@ -172,5 +191,15 @@ export const totalNestedScoresArr = (scoresArr) => {
  */
 
 export const encryptString = (toEncrypt) => {
-  return;
+  return toEncrypt
+    .split("")
+    .reduce(
+      (acc, char, i) => {
+        acc[i % 3].push(char);
+        return acc;
+      },
+      [[], [], []]
+    )
+    .flat()
+    .join("");
 };

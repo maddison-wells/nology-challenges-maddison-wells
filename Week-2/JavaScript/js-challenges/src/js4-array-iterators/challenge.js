@@ -22,7 +22,8 @@
  */
 
 export const removeFalseValues = (booleanArr) => {
-  return;
+  let cloneArr = [...booleanArr];
+  return cloneArr.filter((n) => n === true);
 };
 
 /**
@@ -34,7 +35,8 @@ export const removeFalseValues = (booleanArr) => {
  */
 
 export const createPercentageList = (numbersArr) => {
-  return;
+  let cloneArr = [...numbersArr];
+  return cloneArr.map((n) => n * 100 + "%");
 };
 
 /**
@@ -47,7 +49,8 @@ export const createPercentageList = (numbersArr) => {
  */
 
 export const createListOfPoessessions = (possessionsArr, name) => {
-  return;
+  let cloneArr = [...possessionsArr];
+  return cloneArr.map((n) => `${name} ${n}`);
 };
 
 /**
@@ -72,9 +75,13 @@ export const createListOfPoessessions = (possessionsArr, name) => {
  */
 
 export const convertStringToNumbersArray = (numberString) => {
-  return;
+  let newArr = numberString.split("+");
+  return newArr.filter((n) => n != "+").map((n) => parseInt(n));
 };
-
+// export const convertStringToNumbersArray = (numberString) => {
+//   let newArr = numberString.split("+");
+//   return newArr.map((item) => parseFloat(item)).filter((item) => !isNaN(item));
+// };
 /**
  * A function that takes a string of numbers joined with a "+" and creates a new array based on if the number is even or odd.
  * Every number in the string will need to checked.
@@ -84,7 +91,8 @@ export const convertStringToNumbersArray = (numberString) => {
  */
 
 export const createOddEvenArray = (numberString) => {
-  return;
+  let newArr = numberString.split("+");
+  return newArr.map((n) => (n % 2 === 0 ? "even" : "odd"));
 };
 
 /**
@@ -97,7 +105,9 @@ export const createOddEvenArray = (numberString) => {
  */
 
 export const filterBooksBySearch = (booksArr, searchTerm) => {
-  return;
+  let newArr = [...booksArr];
+  newArr = newArr.filter((items) => items.includes(searchTerm));
+  return newArr;
 };
 
 /**
@@ -117,7 +127,7 @@ export const filterBooksBySearch = (booksArr, searchTerm) => {
  */
 
 export const formatStringArray = (stringArr) => {
-  const cleanedArr = stringArr.forEach((string) => {
+  const cleanedArr = stringArr.map((string) => {
     const cleanStr = string.trim().toLowerCase();
     return cleanStr;
   });
@@ -143,7 +153,16 @@ export const formatStringArray = (stringArr) => {
  */
 
 export const formatString = (string) => {
-  return;
+  let newStr = string.split("");
+  const isLetterString = (str) => /^[A-Za-z]+$/.test(str);
+  // ^ inverts, so remove not A-Za-z
+  const result = newStr
+    .filter(isLetterString)
+    .map((char, index) =>
+      index % 2 === 0 ? char.toUpperCase() : char.toLowerCase()
+    );
+
+  return result;
 };
 
 /**
@@ -170,5 +189,19 @@ export const formatString = (string) => {
  */
 
 export const fizzBuzz = (mixedArray) => {
-  return;
+  const cleanArr = mixedArray.filter(
+    (item) =>
+      (typeof item === "number" && item > 0) ||
+      (typeof item === "string" && !isNaN(item) && Number(item) > 0)
+  );
+
+  return cleanArr.map((num) =>
+    num % 3 === 0 && num % 5 === 0
+      ? "FizzBuzz"
+      : num % 3 === 0
+      ? "Fizz"
+      : num % 5 === 0
+      ? "Buzz"
+      : num.toString()
+  );
 };

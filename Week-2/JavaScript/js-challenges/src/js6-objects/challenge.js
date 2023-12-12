@@ -21,7 +21,7 @@
  * @return {number} The price of the piece of furniture
  */
 export const getFurniturePrice = (furniture) => {
-  /* Write code here */
+  return furniture.price;
 };
 
 /**
@@ -32,7 +32,8 @@ export const getFurniturePrice = (furniture) => {
  * @returns {{name: string, price: number, location: string}} furniture - A furniture object from the catalogue
  */
 export const setFurnitureStoreLocation = (furniture, location) => {
-  /* Write code here */
+  furniture.location = location;
+  return furniture;
 };
 
 /**
@@ -45,8 +46,18 @@ export const setFurnitureStoreLocation = (furniture, location) => {
  * @param {boolean} canTravelSolarSystems The ability for the space ship to travel to different solar systems
  * @returns {{name: string, noOfSeats: number, engineType: string, canTravelSolarSystems: boolean}} spaceship - The space ship object
  */
-export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems) => {
-  /* Write code here */
+export const makeSpaceship = (
+  name,
+  noOfSeats,
+  engineType,
+  canTravelSolarSystems
+) => {
+  return {
+    name: name,
+    noOfSeats: noOfSeats,
+    engineType: engineType,
+    canTravelSolarSystems: canTravelSolarSystems,
+  };
 };
 
 /* Intermediate Challenges */
@@ -59,7 +70,13 @@ export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems
  * @returns {{name: string, username: string}} User - The user object with the same username or a new one
  */
 export const setUserName = (user, username) => {
-  /* Write code here */
+  if (user.hasOwnProperty("username")) {
+    return user;
+  } else {
+    user.username = username;
+
+    return user;
+  }
 };
 
 /**
@@ -70,7 +87,11 @@ export const setUserName = (user, username) => {
  * @returns {{fullName: string, firstName: string, lastName: string}} A customer object from the database with the name separated into first and last
  */
 export const splitFullNameToFirstAndLast = (customer) => {
-  /* Write code here */
+  let splitString = customer.fullName.split(" ");
+  console.log(splitString);
+  customer.firstName = splitString[0];
+  customer.lastName = splitString[1];
+  return customer;
 };
 
 /**
@@ -83,7 +104,9 @@ export const splitFullNameToFirstAndLast = (customer) => {
  * @returns {any} value - The value you have accessed on the object
  */
 export const accessGivenKey = (object, key) => {
-  /* Write code here */
+  if (object.hasOwnProperty(key)) {
+    return object[key];
+  }
 };
 
 /* Advanced Challenges */
@@ -96,7 +119,14 @@ export const accessGivenKey = (object, key) => {
  * @returns {string} An address string for a shipping label
  */
 export const getUserAddress = (user) => {
-  /* Write code here */
+  let getAddress = [];
+  getAddress.push(
+    user.address.line1,
+    user.address.line2,
+    user.address.city,
+    user.address.postcode
+  );
+  return getAddress.toString().replace(/,/g, " ");
 };
 
 /**
@@ -108,7 +138,14 @@ export const getUserAddress = (user) => {
  * @return {{id: number, name: string, allergies: string[], safeAllergens: string[]}} customer
  */
 export const setSafeAllergens = (customer, allergenList) => {
-  /* Write code here */
+  customer.safeAllergens = [];
+
+  for (let i = 0; i < allergenList.length; i++) {
+    if (!customer.allergies.includes(allergenList[i])) {
+      customer.safeAllergens.push(allergenList[i]);
+    }
+  }
+  return customer;
 };
 
 /* Expert Challenge */
@@ -121,6 +158,15 @@ export const setSafeAllergens = (customer, allergenList) => {
  * @param {{id: number, name: string, price: number, isAvailable: boolean}} furnitureProductData - All of the data about the furniture product
  * @returns {{id: number, location: string, sku: string, name: string, price: number, isAvailable: boolean}}
  */
-export const mergeFurniture = (furnitureLocationData, furnitureProductData) => {
-  /* Write code here */
+export const mergeFurniture = (tableProductInfo, tableLocationInfo) => {
+  const mergedObject = { ...tableProductInfo };
+  Object.keys(tableLocationInfo).forEach((key) => {
+    if (!mergedObject.hasOwnProperty(key)) {
+      mergedObject[key] = tableLocationInfo[key];
+    }
+  });
+
+  return mergedObject;
 };
+
+//loop through each and push to a new object

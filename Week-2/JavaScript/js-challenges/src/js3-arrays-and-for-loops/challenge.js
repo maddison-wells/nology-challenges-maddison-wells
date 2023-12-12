@@ -176,6 +176,7 @@ export const generateHighscores = (playersArr, scoresArr) => {
   return newArr;
 };
 
+// .map(playerName, i) => return P:${i + 1} ${playerName} scored ${i}`);
 /**
  * A function that takes a string and creates a simple encrypted message.
  *
