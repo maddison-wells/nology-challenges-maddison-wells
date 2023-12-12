@@ -532,3 +532,255 @@ function generateNumbers(n, r, isUnique = true) {
 }
 
 console.log(generateNumbers(10, 15, false));
+
+booleanArr = [true, true, false, false, true];
+
+const removeFalseValues = (booleanArr) => {
+  newArr = booleanArr.filter((n) => n === true);
+  return newArr;
+};
+
+console.log(removeFalseValues(booleanArr));
+
+let numbersArr = [0.1, 0.2, 0.3];
+
+const createPercentageList = (numbersArr) => {
+  let cloneArr = [...numbersArr];
+  return cloneArr.map((n) => n * 100 + "%");
+};
+
+console.log(createPercentageList(numbersArr));
+
+let possessionsArr = ["shoes", "jacket", "belt"];
+let name = "disco";
+
+const createListOfPoessessions = (possessionsArr, name) => {
+  let cloneArr = [...possessionsArr];
+  return cloneArr.map((n) => name + n);
+};
+
+console.log(createListOfPoessessions(possessionsArr, name));
+
+let numberString = "1+2+3+4+77";
+const convertStringToNumbersArray = (numberString) => {
+  let newArr = numberString.split("+");
+  console.log(newArr);
+  return newArr
+    .filter((n) => (typeof n === "number" ? item : null))
+    .map((n) => parseInt(n));
+};
+
+console.log(convertStringToNumbersArray(numberString));
+
+const createOddEvenArray = (numberString) => {
+  let newArr = numberString.split("+");
+  console.log(newArr);
+  return newArr.map((n) => (n % 2 === 0 ? "even" : "odd"));
+};
+
+console.log(createOddEvenArray(numberString));
+
+let booksArr = [
+  "JavaScript: The Definitive Guide",
+  "JavaScript: The Good Parts",
+  "The Google story",
+  "React for Dummies",
+];
+// let searchTerm = "Google";
+
+// const filterBooksBySearch = (booksArr, searchTerm) => {
+//   let newArr = [...booksArr];
+//   newArr = newArr.filter((items) => items.includes(searchTerm));
+//   return newArr;
+// };
+
+// console.log(filterBooksBySearch(booksArr));
+
+let stringArr = ["  dIsco", " ShOes "];
+
+const formatStringArray = (stringArr) => {
+  const cleanedArr = stringArr.map((string) => {
+    const cleanStr = string.trim().toLowerCase();
+    console.log(cleanStr);
+    return cleanStr;
+  });
+
+  // console.log(cleanStr);
+
+  const joinedString = cleanedArr.join("+");
+
+  return joinedString;
+};
+
+console.log(formatStringArray(stringArr));
+
+let string = " 22 $$He LL--O!%^& ";
+//  * @return {string[]} [ 'H', 'e', 'L', 'l', 'O' ]
+//  */
+
+const formatString = (string) => {
+  let newStr = string.split("");
+  const isLetterString = (str) => /^[A-Za-z]+$/.test(str);
+  const result = newStr.filter(isLetterString);
+  return result;
+};
+
+console.log(formatString(string));
+
+let mixedArray = [-1, "disco", "3", 5, "15", 2, 0];
+
+const fizzBuzz = (mixedArray) => {
+  let cleanArr = mixedArray.filter((i) => !isNaN(Number(i)));
+
+  return cleanArr.map((num) =>
+    num % 3 === 0 && num % 5 === 0
+      ? "FizzBuzz"
+      : num % 3 === 0
+      ? "Fizz"
+      : num % 5 === 0
+      ? "Buzz"
+      : num.toString()
+  );
+};
+
+console.log(fizzBuzz(mixedArray));
+
+let toReverse = "reverse";
+
+const reverseString = (toReverse) => {
+  // return toReverse.split("").reduce((reversed, i) => {
+  //   i + reversed;
+  //   return reversed;
+  // }, []);
+  // return toReverse;
+
+  return toReverse.split("").reduce((acc, char) => char + acc, "");
+};
+
+console.log(reverseString(toReverse));
+
+let charcterArr = ["X", "B", "B", "b", "g", "l", "n", "x"];
+
+const sortCharactersAlphabetically = (charcterArr) => {
+  return charcterArr.map((char) => char.toLowerCase()).sort();
+};
+
+console.log(sortCharactersAlphabetically(charcterArr));
+
+let toCheck = "orange";
+const checkItemInstock = (toCheck) => {
+  const stockList = [
+    "apple",
+    "banana",
+    "orange",
+    "coconut",
+    "strawberry",
+    "lime",
+    "grapefruit",
+    "lemon",
+    "kumquat",
+    "blueberry",
+    "melon",
+  ];
+  return stockList.includes(toCheck)
+    ? `${toCheck} is instock, it is on aisle ${stockList.indexOf(toCheck)}.`
+    : `Sorry ${toCheck} is not instock.`;
+};
+
+console.log(checkItemInstock(toCheck));
+
+let coloursArr = [
+  // ("red", "orange", "yellow", "green", "blue", "indigo", "violet"),
+  "red",
+  "yellow",
+  "green",
+  "blue",
+];
+
+const checkPrimaryColours = (coloursArr) => {
+  let isPrimary = ["red", "yellow", "blue"];
+  //   return coloursArr.reduce(
+  //     (isPrimary, i) => (i != isPrimary ? false : true),
+  //     Boolean
+  //   );
+  // };
+
+  const missingPrimary = isPrimary.some(
+    (colour) => !coloursArr.includes(colour)
+  );
+  return !missingPrimary;
+};
+
+console.log(checkPrimaryColours(coloursArr));
+
+let stringOne = "racecar";
+// return true or false
+
+// const checkStringPalindrome = (stringOne) => {
+//   let isPal = stringOne.split("");
+//  isPal.map((i) =>
+//   if (isPal[i] != isPal[isPal.length -1]){
+//     return false;
+//     break;
+//   }
+//   else (
+//     isPal.slice(1, isPal.length -2)
+//     return true;
+//   ));
+// return isPal;
+//   };
+
+// console.log(checkStringPalindrome(stringOne));
+
+let numberArr = [[7, 7, 6], [2, 3, 2], [3]];
+const totalNestedScoresArr = (scoresArr) => {
+  let total = 0;
+  let finalArray = [];
+  for (let i = 0; i < scoresArr.length; i++) {
+    for (let j = 0; j < scoresArr[i].length; j++) {
+      total += scoresArr[i][j];
+    }
+    finalArray.push(total);
+  }
+  return finalArray;
+};
+
+console.log(totalNestedScoresArr(numberArr));
+
+let toEncrypt = "encrypted";
+
+const encryptStrin = (toEncrypt) => {
+  const splitString = toEncrypt.split("");
+
+  const encryptedString = splitString.reduce((acc, currentChar, index) => {
+    const groupIndex = index % 3;
+
+    if (!acc[groupIndex]) {
+      acc[groupIndex] = "";
+    }
+
+    acc[groupIndex] += currentChar;
+
+    return acc;
+  }, []);
+
+  return encryptedString.join("");
+};
+
+console.log(encryptStrin(toEncrypt));
+
+//splice
+
+// const encryptString = (toEncrypt) => {
+//   let newArr = [];
+//   for (let i = 0; i < toEncrypt.length; i += 3) {
+//     newArr.push(toEncrypt[i]);
+//   }
+//   for (let i = 1; i < toEncrypt.length; i += 3) {
+//     newArr.push(toEncrypt[i]);
+//   }
+//   for (let i = 2; i < toEncrypt.length; i += 3) {
+//     newArr.push(toEncrypt[i]);
+//   }
+//   return newArr.join("");
+// };

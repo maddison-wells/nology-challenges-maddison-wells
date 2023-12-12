@@ -4,7 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript</title>
-    <script defer src="main.js"></script>
+    <script defer src="main1.js"></script>
+    <script
+      src="https://kit.fontawesome.com/e25bb34f55.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body></body>
+  <body>
+  
+
+      <form onsubmit="onSubmit(event)">
+        <label for="userInput">Enter your age:</label>
+        <input type="number" id="userInput" name="userInput" required>
+        <button type="submit" id="submitButton">Submit</button>
+    <div>
+      <i class="fa-solid fa-martini-glass-citrus" id="drink"></i>
+    </div>
+  </body>
 </html>
+
+<style>
+  i {
+    font-size: 70px;
+  }
+
+  button {
+    border-radius: 10px;
+  }
+</style>
