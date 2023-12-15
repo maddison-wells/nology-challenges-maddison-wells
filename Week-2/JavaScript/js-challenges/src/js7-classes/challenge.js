@@ -27,7 +27,10 @@ export class Coordinate {
    * @param {number} xCoord - 22.
    * @param {number} yCoord - 20.
    */
-  constructor(xCoord, yCoord) {}
+  constructor(xCoord, yCoord) {
+    this.xCoord = xCoord;
+    this.yCoord = yCoord;
+  }
 }
 
 /**
@@ -48,14 +51,16 @@ export class Alert {
    * Create an alert.
    * @param {string} message - "Are sure you want to proceed?"
    */
-  constructor() {}
+  constructor(message) {
+    this.message = message;
+  }
 
   /**
    * Returns a string with "!!!! " + " !!!!" added to the start and end of the message key.
    * @return {string} "!!!! Are sure you want to proceed? !!!!"
    */
   printMessage() {
-    return;
+    return `!!!! ${this.message} !!!!`;
   }
 }
 
@@ -83,17 +88,23 @@ export class Loader {
    * Create a loader.
    * @param {{innerHTML:string}} htmlRef - {innerHTML:""}
    */
-  constructor() {}
+  constructor(htmlRef) {
+    this.htmlRef = htmlRef;
+  }
 
   /**
    * Updates the htmlRef.innerHTML to display the loader's html.
    */
-  displayLoader() {}
+  displayLoader() {
+    this.htmlRef.innerHTML = '<div class="loader"></div>';
+  }
 
   /**
    * Updates the htmlRef.innerHTML to remove the loader's html.
    */
-  removeLoader() {}
+  removeLoader() {
+    this.htmlRef.innerHTML = "";
+  }
 }
 
 /**
@@ -125,21 +136,16 @@ export class Counter {
    * Create an counter.
    * @param {number} count - 50
    */
-  constructor() {}
+  constructor(count = 0) {
+    this.count = count;
+  }
+  increment() {
+    return this.count++;
+  }
 
-  /**
-   * A method that increments count by 1.
-   * @return {number} 51
-   */
-
-  // WRITE INCREMENT FUNCTION HERE
-
-  /**
-   * A method that decrements count by 1 but will not go below 0.
-   * @return {number} 49
-   */
-
-  // WRITE DECREMENT FUNCTION HERE
+  decrement() {
+    return this.count > 0 ? this.count-- : this.count;
+  }
 }
 
 /**
@@ -167,23 +173,35 @@ export class Engine {
   /**
    * Create an engine.
    */
-  constructor() {}
+  constructor(engineIsRunning = false) {
+    this.engineIsRunning = engineIsRunning;
+  }
 
   /**
    * Updates engineIsRunning to true and returns a conditonal string based if the engine is already running.
    * @return {string} "Engine has started running" or "Engine is already running"
    */
   startEngine() {
-    return;
+    if (this.engineIsRunning === true) {
+      return "Engine is already running";
+    } else {
+      this.engineIsRunning = true;
+      return "Engine has started running";
+    }
   }
-
   /**
    * Updates engineIsRunning to false and returns a conditonal string based if the engine has already stopped.
    * @return {string} "Engine has stopped running" or "Engine has already stopped running"
    */
   stopEngine() {
-    return;
+    if (this.engineIsRunning === false) {
+      return "Engine has already stopped running";
+    } else {
+      this.engineIsRunning = false;
+      return "Engine has stopped running";
+    }
   }
+  return;
 }
 
 /**
@@ -224,19 +242,44 @@ export class Modal {
    * @param {string} title - "Error"
    * @param {string} message - "We are currently unable to provide this service"
    */
-  constructor() {}
+  constructor(htmlRef, title, message) {
+    this.htmlRef = htmlRef;
+    this.title = title;
+    this.message = message;
+  }
 
   /**
    * A method that renders the html for a modal.
    */
 
-  // WRITE RENDER HTML METHOD HERE
-
+  renderHtml() {
+    this.htmlRef.innerHTML = `
+    <div class="modal">
+      <h2 class="modal--title">${this.title}</h2>
+      <p class="modal--message">${this.message}</p>
+    </div>
+    `;
+  }
+  //  let regex = /\s.*<div class="modal'>\s.*/ <h2 class="modal--title">${this.title}<\/h2>\s.*/ fix test
   /**
    * A method that toggles a CSS class to either show or hide the modal.
    */
 
-  // WRITE DISPLAY MODAL METHOD HERE
+  displayModal() {
+    if (this.htmlRef.innerHTML.includes("hide")) {
+      this.htmlRef.innerHTML = `
+    <div class="modal">
+      <h2 class="modal--title">${this.title}</h2>
+      <p class="modal--message">${this.message}</p>
+    </div>
+    `;
+    } else {
+      this.htmlRef.innerHTML = `<div class="modal hide">
+        <h2 class="modal--title">${this.title}</h2>
+        <p class="modal--message">${this.message}</p>
+      </div>`;
+    }
+  }
 }
 
 /**
@@ -303,16 +346,18 @@ export class BookShelf {
    * @return {string} "Learning JavaScript Design Patterns"
    */
 
-  // WRITE LATEST BOOK GETTER HERE
-
+  get latestBook() {
+    return this._booksOnShelf[this._booksOnShelf.length - 1];
+  }
   /**
    * A setter that adds a new book to the list of books.
    * @param {string} "Eloquent JavaScript"
    */
 
-  // WRITE ADD BOOK TO SHELF SETTER HERE
+  set addBookToShelf(book) {
+    this._booksOnShelf.push(book);
+  }
 }
-
 /**
  * Expert Challenge
  */
@@ -363,25 +408,25 @@ export class BankAccount {
    * @param {string} email
    * @param {number} balance
    */
-  constructor() {}
+  constructor(name, email, balance = 0) {
+    this.name = name;
+    this.email = email;
+    this._balance = balance;
+  }
 
-  /**
-   * A getter that returns the current balance.
-   * @return {number} 20
-   */
+  get balance() {
+    return this._balance;
+  }
 
-  // WRITE BALANCE GETTER HERE
-
-  /**
-   * A method that deposits to the balance.
-   * It checks if the input is correct.
-   * If if it is incorrect it returns "Invalid input, unable to deposit".
-   * If it is correct it adds the input to the balance and returns the updated balance.
-   * @param {(number|string)} toDeposit 20 or "Bad Input"
-   * @return {(number|string)} 40 or "Invalid input, unable to deposit"
-   */
-
-  // WRITE DEPOSIT METHOD HERE
+  deposit(funds) {
+    funds = parseInt(funds);
+    if (funds == !NaN || funds > 0) {
+      this._balance += funds;
+    } else {
+      return "Invalid input, unable to deposit";
+    }
+    return this._balance;
+  }
 
   /**
    * A method that withdraws from the balance.
@@ -393,5 +438,15 @@ export class BankAccount {
    * @return {(number|string)} 40 or "Invalid input, unable to deposit" or "Insufficient funds, unable to withdraw"
    */
 
-  // WRITE WITH DRAW METHOD HERE
+  withdraw(amount) {
+    amount = parseInt(amount);
+    if (amount === NaN) {
+      return "Invalid input, unable to withdraw";
+    } else if (amount > this._balance) {
+      return "Insufficient funds, unable to withdraw";
+    } else {
+      this._balance -= amount;
+      return this._balance;
+    }
+  }
 }

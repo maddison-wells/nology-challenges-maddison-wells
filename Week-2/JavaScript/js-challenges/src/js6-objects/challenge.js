@@ -94,6 +94,8 @@ export const splitFullNameToFirstAndLast = (customer) => {
   return customer;
 };
 
+// const [firstName, lastName] = customer.fullName.split(" "); - will assign the split name into those two vaiables
+
 /**
  * A function which access a given key on an object
  *
@@ -104,9 +106,7 @@ export const splitFullNameToFirstAndLast = (customer) => {
  * @returns {any} value - The value you have accessed on the object
  */
 export const accessGivenKey = (object, key) => {
-  if (object.hasOwnProperty(key)) {
-    return object[key];
-  }
+  return object[key];
 };
 
 /* Advanced Challenges */
@@ -128,6 +128,8 @@ export const getUserAddress = (user) => {
   );
   return getAddress.toString().replace(/,/g, " ");
 };
+
+// return Object.values(user.address).join(" ");
 
 /**
  * A function that given a customer for the restaurant with a list of known allergies and a list of allergens in an
